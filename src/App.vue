@@ -1,28 +1,61 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <Nav></Nav>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Nav from './components/Nav.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Nav
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+/* 样式重置 */
+body,html,ul,li,ol,dl,dt,dd,form,td,tr,p,span,h1,h2,h3,h4,h5,h6,a,img,input{
+	margin:0;
+	padding:0;
 }
+*{
+    -webkit-tap-highlight-color: transparent;
+}
+body{
+	font-size:12px;
+    font-family: 微软雅黑;
+}
+img{
+	border:0;
+	vertical-align: top;
+}
+
+a{
+	text-decoration:none;
+    color: #333;
+}
+
+li{
+    list-style: none;
+}
+
+.clearfix:after{
+	content: ".";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+    font-size: 1px;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+
+}
+
 </style>

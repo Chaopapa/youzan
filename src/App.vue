@@ -65,7 +65,8 @@ html,body{
   position: absolute;
   width: 100%;
   top: 46px;
-  height: 45px;
-  overflow: hidden;
+  bottom: 45px;
+  overflow: auto;
+  background: #e6e6e6;
 }
 </style>

@@ -20,7 +20,6 @@ export default {
     },
     created(){
        this.$center.$on('tab',(title)=>{
-           console.log("触发了");
            this.title = title;
        }) 
     }

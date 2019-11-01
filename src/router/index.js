@@ -6,8 +6,18 @@ Vue.use(Router);
 //构建路由表
 const routes = [
     {
-        path:"/home",
-        components: ()=>import("")
+        path:'/',
+        redirect:"/home"
+    },
+    {
+      path:'/home',
+      component:()=>import("../pages/home/index.vue")
+    },{
+        path:"/order",
+        component:()=>import("../pages/order")
+    },{
+        path:"/mine",
+        component:()=>import("../pages/mine")
     }
 ];
 

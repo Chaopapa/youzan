@@ -1,16 +1,20 @@
 <template>
   <div id="app">
+      <router-view></router-view>
       <Nav></Nav>
+      <Header></Header>
   </div>
 </template>
 
 <script>
 import Nav from './components/Nav.vue';
+import Header from "./components/Header";
 
 export default {
   name: 'app',
   components: {
-    Nav
+    Nav,
+    Header
   }
 }
 </script>
@@ -57,5 +61,11 @@ html,body{
     height: 100%;
 
 }
-
+.page{
+  position: absolute;
+  width: 100%;
+  top: 46px;
+  height: 45px;
+  overflow: hidden;
+}
 </style>

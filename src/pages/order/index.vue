@@ -1,7 +1,7 @@
 <template>
-    <div class="page" id="home">
-        <h1>主页</h1>
-    </div>
+  <div id="order" class="page">
+      <h1>订单内容</h1>
+  </div>
 </template>
 
 <script>

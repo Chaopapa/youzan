@@ -1,7 +1,7 @@
 <template>
   <div class="goodsList">
-    <h4>秋冬热销</h4>
-    <p>保暖恒温/空气调节/热敷个路</p>
+    <h4>{{category.name}}</h4>
+    <p>{{category.frontDesc}}</p>
     <div class="goodsList-content">
       <slot></slot>
     </div>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    
+    props:['category']
 };
 </script>
 

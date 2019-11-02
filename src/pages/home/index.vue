@@ -5,7 +5,9 @@
         <img :src="item.picUrl" />
       </van-swipe-item>
     </van-swipe>
-    <goods-list></goods-list>
+    <goods-list :bannerList="bannerList" :categoryItemList="categoryItemList">
+
+    </goods-list>
   </div>
 </template>
 
@@ -18,7 +20,9 @@ Vue.use(Swipe).use(SwipeItem);
 export default {
   data() {
     return {
-      bannerList: []
+      bannerList: [],
+      categoryItemList:[]
+
     };
   },
 components:{
@@ -34,6 +38,7 @@ components:{
           const data = response.data.data;
           console.log(data);
           _this.bannerList = data.currentCategory.bannerList;
+          _this.categoryItemList = data.categoryItemList;
         })
         .catch(err => {
           console.log("请求失败");

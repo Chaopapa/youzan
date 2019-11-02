@@ -1,18 +1,18 @@
 <template>
   <div class="goodsItem">
       <div class="goodsItem-img">
-          <img src="https://yanxuan-item.nosdn.127.net/98a65ae2cf4a9c4aa9e03d2661d377ee.png?imageView&quality=65&thumbnail=330x330" alt="">
+          <img :src="item.listPicUrl" alt="">
       </div>
       <div class="goodsItem-content">
-          <h3>日式暖水袋</h3>
+          <h3>{{item.name}}</h3>
           <div class="price">
-              <span class="price-after">￥74</span>
+              <span class="price-after">￥{{item.retailPrice}}</span>
               <span class="price-before">
-                  <del>￥79</del>
+                  <del>￥{{item.counterPrice}}</del>
               </span>
           </div>
-          <div class="desc">
-              狂欢特惠
+          <div v-for="(value,i) in item.itemTagList" :key="i" class="desc">
+            {{value.name}}
           </div>
       </div>
   </div>
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-
+    props:['item']
 }
 </script>
 
@@ -34,6 +34,9 @@ export default {
     font-size: 14px;
     color:#333;
     margin-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .goodsItem-img img{
     width: 172px;
@@ -41,7 +44,7 @@ export default {
 }
 .goodsItem .desc{
     color: #DD1A21;
-    width: 60px;
+    padding: 0 3px;
     height: 15px;
     text-align: center;
     line-height: 15px;
@@ -50,6 +53,8 @@ export default {
     border-radius: .2rem;
     background: rgba(255,255,255,.9);
     margin-top: 6px;
+    margin-right: 5px;
+    float: left;
 }
 .price .price-after{
     font-size: 16px;

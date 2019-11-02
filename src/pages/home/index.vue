@@ -1,13 +1,14 @@
 <template>
-  <div class="page" id="home">
-    <van-swipe :height="185" indicator-color>
-      <van-swipe-item v-for="(item,index) in bannerList" :key="index">
-        <img :src="item.picUrl" />
-      </van-swipe-item>
-    </van-swipe>
-    <goods-list :bannerList="bannerList" :categoryItemList="categoryItemList">
-
-    </goods-list>
+  <div>
+    <div class="page" id="home">
+      <van-swipe :height="185" indicator-color>
+        <van-swipe-item v-for="(item,index) in bannerList" :key="index">
+          <img :src="item.picUrl" />
+        </van-swipe-item>
+      </van-swipe>
+      <goods-list :bannerList="bannerList" :categoryItemList="categoryItemList"></goods-list>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -15,19 +16,18 @@
 import { Swipe, SwipeItem } from "vant";
 import Vue from "vue";
 import axios from "axios";
-import GoodsList from "../../components/goodsList"
+import GoodsList from "../../components/goodsList";
 Vue.use(Swipe).use(SwipeItem);
 export default {
   data() {
     return {
       bannerList: [],
-      categoryItemList:[]
-
+      categoryItemList: []
     };
   },
-components:{
-    "goods-list":GoodsList
-},
+  components: {
+    "goods-list": GoodsList
+  },
   methods: {
     requestGetData() {
       let _this = this;
@@ -53,7 +53,6 @@ components:{
 </script>
 
 <style scoped>
-
 #home .van-swipe img {
   width: 100%;
   height: 185px;

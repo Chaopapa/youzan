@@ -22,7 +22,8 @@ export default {
        this.$center.$on('tab',(title)=>{
            this.title = title;
        }) 
-    }
+    },
+    
 };
 </script>
 

@@ -11,7 +11,12 @@ const routes = [
     },
     {
       path:'/home',
-      component:()=>import("../pages/home/index.vue")
+      component:()=>import("../pages/home/index.vue"),
+      children:[{
+          path:"detail/:id",
+          props:true,
+          component:()=>import("../pages/home/detail.vue")
+      }]
     },{
         path:"/order",
         component:()=>import("../pages/order")

@@ -20,7 +20,7 @@
 
 <script>
 export default {
-    props:['item']
+    props:['item','detailAction']
 }
 </script>
 

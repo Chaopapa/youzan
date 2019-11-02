@@ -1,7 +1,7 @@
 <template>
   <div class="goods-list">
       <GoodsList :category="item.category" v-for="(item,index) in categoryItemList" :key="index">
-          <GoodsItem :item="value" v-for="(value,i) in item.itemList" :key="i">
+          <GoodsItem  @click="detailAction(value.id)" :item="value" v-for="(value,i) in item.itemList" :key="i">
 
           </GoodsItem>
       </GoodsList>
@@ -25,6 +25,12 @@ export default {
     components:{
         GoodsList,
         GoodsItem
+    },
+    methods:{
+        detailAction(id){
+            console.log(id);
+            this.$router.push(`/home/detail${id}`);
+        }
     }
 }
 </script>

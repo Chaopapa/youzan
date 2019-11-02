@@ -90,4 +90,8 @@ body {
   overflow: auto;
   background: #e6e6e6;
 }
+.page.detail{
+  bottom: 0;
+  z-index: 10;
+}
 </style>
